@@ -1,10 +1,21 @@
-task = []
+tasks = []
 
 def addTask():
-   print("Added task")
+   task = input("Please enter a task: ")
+   tasks.appenq(task)
+   print(f"Task '{task} added to the list.")
 
 def deleteTask():
-   print("Delete task")
+   listTask()
+   try:
+      taskToDelete = int(input("Enter the # to delete."))
+      if taskToDelete>=0 and taskToDelete < len(tasks):
+         tasks.pop(taskToDelete)
+         print(f"Task {taskToDelete} has been remove.")
+      else:
+         print(f"Task #{taskToDelete} was not found.")
+   except:
+      print("Invalid input")
 
 def listTask():
    print("List of tasks")
