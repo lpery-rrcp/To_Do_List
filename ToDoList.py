@@ -2,7 +2,7 @@ tasks = []
 
 def addTask():
    task = input("Please enter a task: ")
-   tasks.appenq(task)
+   tasks.append(task)
    print(f"Task '{task} added to the list.")
 
 def deleteTask():
@@ -18,7 +18,15 @@ def deleteTask():
       print("Invalid input")
 
 def listTask():
-   print("List of tasks")
+   if not tasks:
+      print("There are no tasks currently.")
+   else:
+      print("List of tasks: \n")
+      for index, task in enumerate(tasks):
+         print(f"Task#{index}. {task}")
+         # Task #1. Take trash out.
+         
+
 
 if __name__ == "__main__" :
    # Create loop to run app
